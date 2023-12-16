@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tambah Soal Baru</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body style="background: lightgray">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <% if (messages.error) { %>
+                    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+                    <% } %>
+                <div class="card border-0 shadow rounded">
+                    <div class="card-body">
+                        <h3>Tambah Soal Baru</h3>
+                        <form action="/posts/coba" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Judul Ujian</label>
+                                <textarea class="form-control" name="judul" rows="4" placeholder="Tulis judul ujian disini"><%= judul %></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Tanggal & Waktu Ujian</label>
+                                <input type="datetime-local" class="form-control" autocomplete="off" name="tanggal" value="<%= tanggal %>" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Berkas Soal Ujian</label>
+                                <input type="file" class="form-control" autocomplete="off" name="berkas" value="" placeholder="">
+                            </div>
+                            
+                            
+                            <button type="submit" class="btn btn-primary">SIMPAN</button>
+                            <button type="reset" class="btn btn-warning">RESET</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </script>
+</body>
+</html>

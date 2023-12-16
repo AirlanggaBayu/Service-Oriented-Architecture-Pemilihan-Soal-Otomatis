@@ -1,0 +1,4 @@
+Folder soa = digunakan untuk server side
+Folder soal = digunakan untuk client side
+
+Terima Kasih

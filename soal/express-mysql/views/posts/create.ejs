@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tambah Soal Baru</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body style="background: lightgray">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <% if (messages.error) { %>
+                    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+                    <% } %>
+                <div class="card border-0 shadow rounded">
+                    <div class="card-body">
+                        <h3>Tambah Soal Baru</h3>
+                        <form action="/posts/store" method="post">
+                            <div class="form-group">
+                                <label>Pertanyaan</label>
+                                <textarea class="form-control" name="pertanyaan" rows="4" placeholder="Tulis pertanyaan disini"><%= pertanyaan %></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban A</label>
+                                <input type="text" class="form-control" autocomplete="off" name="jawaban_a" value="<%= jawaban_a %>" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban B</label>
+                                <input type="text" class="form-control" autocomplete="off" name="jawaban_b" value="<%= jawaban_b %>" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban C</label>
+                                <input type="text" class="form-control" autocomplete="off" name="jawaban_c" value="<%= jawaban_c %>" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Jawaban D</label>
+                                <input type="text" class="form-control" autocomplete="off" name="jawaban_d" value="<%= jawaban_d %>" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Tingkat kesulitan Soal</label>
+                                <select class="form-select" name="kesulitan" aria-label="Pilih tingkat kesulitan soal">
+                                    <option value="Mudah" >Mudah</option>
+                                    <option value="Sedang" >Sedang</option>
+                                    <option value="Sulit" >Sulit</option>
+                                </select> 
+                            </div>
+                            <div class="form-group">
+                                <label>Materi</label>
+                                <select class="form-select" name="materi" aria-label="Pilih materi">
+                                    <option value="Bab 1" >Bab 1</option>
+                                    <option value="Bab 2" >Bab 2</option>
+                                    <option value="Bab 3" >Bab 3</option>
+                                    <option value="Bab 4" >Bab 4</option>
+                                    <option value="Bab 5" >Bab 5</option>
+                                </select> 
+                            </div>
+                            <button type="submit" class="btn btn-primary">SIMPAN</button>
+                            <button type="reset" class="btn btn-warning">RESET</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </script>
+</body>
+</html>
